@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+
+    <!-- External CSS -->
+    <link href="assets/CSS/login-page.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="login-root">
+      <!-- Background -->
+      <div class="background">
+        <img src="assets/images/bg_login.jpg" alt="Warehouse background" />
+        <div class="overlay"></div>
+      </div>
+
+      <!-- Login Card -->
+      <div class="login-container">
+        <div class="login-card">
+          <!-- Header -->
+          <div class="login-header">
+            <div class="login-icon">
+              <span class="material-symbols-outlined">warehouse</span>
+            </div>
+            <h3 class="login-title">Login to your account</h3>
+          </div>
+
+          <!-- Form -->
+          <div class="login-form">
+            <label class="form-label">
+              <p>Username</p>
+              <div class="input-wrapper">
+                <span class="material-symbols-outlined">person</span>
+                <input type="text" placeholder="Enter your username" id="user-name" />
+              </div>
+              <span class="error-message"></span>
+            </label>
+
+            <label class="form-label">
+              <p>Password</p>
+              <div class="input-wrapper">
+                <span class="material-symbols-outlined">lock</span>
+                <input type="password" placeholder="Enter your password" id="user-password"/>
+              </div>
+              <span class="error-message" id="error"></span>
+            </label>
+          </div>
+
+          <!-- Button -->
+          <div class="login-actions">
+            <a href="Dashboard.html" class="login-btn" id="loginBtn">Login</a>
+          </div>
+        </div>
+
+        <p class="login-footer">
+          © 2025 <span class="text-red">~Dev"--Ziad Mohammed ♡--"</span>. All
+          rights reserved.
+        </p>
+      </div>
+    </div>
+
+    <!-- External JS -->
+    <script src="assets/JS/login-page.js"></script>
+  </body>
+</html>

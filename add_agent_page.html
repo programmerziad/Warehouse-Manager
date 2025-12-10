@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Add Agent Page</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .active-nav-item .material-symbols-outlined {
+        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "card-light": "#ffffff",
+              "card-dark": "#192734",
+              "text-light": "#111418",
+              "text-dark": "#e3e9f0",
+              "subtext-light": "#617589",
+              "subtext-dark": "#9ab0c8",
+              "border-light": "#dbe0e6",
+              "border-dark": "#324354",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark"
+  >
+    <div class="relative flex min-h-screen w-full flex-row">
+      <aside
+        class="sticky top-0 flex h-screen w-64 flex-col justify-between border-r border-border-light bg-card-light p-4 dark:border-border-dark dark:bg-card-dark"
+      >
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-3 p-2">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              data-alt="Warehouse Inc. company logo"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9tYBz7c69VBvZkY3dFCrMk3PxzJ7wEJD9QELS7p7zRcDeTJIUFNJvP1axITDc-wXgbJ42gvlYrNPYQR71hVhQ0k6QryWPnn6fAlsEkNps3lt5bx6eHQl2dSdvwNMOAqNv0uu4113L4G1e7ZaK9y_Xb9b2jKP5whXsWuljTyzSU1y1ZYNTQYt6E8g94t272e6Fisn4s9_aXVadBcbBB2XwZ96mpOPsRL5WugJ9HHVwpqKkWx7pr62_jMeNKi5K8E8EyzZT0twDFHxi');
+              "
+            ></div>
+            <div class="flex flex-col">
+              <h1
+                class="text-text-light dark:text-text-dark text-base font-medium leading-normal"
+              >
+                Warehouse Inc.
+              </h1>
+              <p
+                class="text-subtext-light dark:text-subtext-dark text-sm font-normal leading-normal"
+              >
+                Management System
+              </p>
+            </div>
+          </div>
+          <nav class="flex flex-col gap-2">
+            <a
+              class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light dark:text-text-dark hover:bg-primary/10"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-xl">dashboard</span>
+              <p class="text-sm font-medium leading-normal">Dashboard</p>
+            </a>
+            <a
+              class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light dark:text-text-dark hover:bg-primary/10"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-xl">inventory_2</span>
+              <p class="text-sm font-medium leading-normal">Products</p>
+            </a>
+            <a
+              class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light dark:text-text-dark hover:bg-primary/10"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-xl">add_box</span>
+              <p class="text-sm font-medium leading-normal">Add Product</p>
+            </a>
+            <a
+              class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light dark:text-text-dark hover:bg-primary/10"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-xl"
+                >production_quantity_limits</span
+              >
+              <p class="text-sm font-medium leading-normal">Stockout</p>
+            </a>
+            <a
+              class="active-nav-item flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-primary dark:text-primary"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-xl"
+                >support_agent</span
+              >
+              <p class="text-sm font-medium leading-normal">Agent</p>
+            </a>
+            <a
+              class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light dark:text-text-dark hover:bg-primary/10"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-xl"
+                >receipt_long</span
+              >
+              <p class="text-sm font-medium leading-normal">Debits</p>
+            </a>
+          </nav>
+        </div>
+        <div class="flex flex-col gap-1">
+          <a
+            class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light dark:text-text-dark hover:bg-primary/10"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-xl"
+              >account_circle</span
+            >
+            <p class="text-sm font-medium leading-normal">Profile</p>
+          </a>
+          <a
+            class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light dark:text-text-dark hover:bg-primary/10"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-xl">logout</span>
+            <p class="text-sm font-medium leading-normal">Logout</p>
+          </a>
+        </div>
+      </aside>
+      <main class="flex w-full flex-col p-6 lg:p-8">
+        <div class="flex-1">
+          <header
+            class="flex flex-wrap items-center justify-between gap-4 pb-8"
+          >
+            <h1
+              class="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-[-0.033em]"
+            >
+              Add Agent
+            </h1>
+            <div class="flex items-center gap-2">
+              <button
+                class="flex h-10 w-10 items-center justify-center rounded-lg border border-border-light bg-card-light text-subtext-light dark:border-border-dark dark:bg-card-dark dark:text-subtext-dark"
+              >
+                <span class="material-symbols-outlined text-xl dark:hidden"
+                  >dark_mode</span
+                >
+                <span
+                  class="material-symbols-outlined text-xl hidden dark:inline"
+                  >light_mode</span
+                >
+              </button>
+              <button
+                class="flex h-10 w-10 items-center justify-center rounded-lg border border-border-light bg-card-light text-subtext-light dark:border-border-dark dark:bg-card-dark dark:text-subtext-dark"
+              >
+                <span class="material-symbols-outlined text-xl">language</span>
+              </button>
+            </div>
+          </header>
+          <div class="flex flex-col gap-8">
+            <div
+              class="rounded-xl border border-border-light bg-card-light p-6 shadow-sm dark:border-border-dark dark:bg-card-dark"
+            >
+              <h2
+                class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] pb-6"
+              >
+                Personal Details
+              </h2>
+              <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <label class="flex flex-col">
+                  <p
+                    class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2"
+                  >
+                    Name
+                  </p>
+                  <input
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-border-light bg-background-light px-4 py-3 text-base font-normal leading-normal text-text-light placeholder:text-subtext-light focus:border-primary focus:outline-0 focus:ring-0 dark:border-border-dark dark:bg-background-dark dark:text-text-dark dark:placeholder:text-subtext-dark"
+                    placeholder="Enter agent's full name"
+                    type="text"
+                  />
+                </label>
+                <label class="flex flex-col">
+                  <p
+                    class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2"
+                  >
+                    Phone Number
+                  </p>
+                  <input
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-border-light bg-background-light px-4 py-3 text-base font-normal leading-normal text-text-light placeholder:text-subtext-light focus:border-primary focus:outline-0 focus:ring-0 dark:border-border-dark dark:bg-background-dark dark:text-text-dark dark:placeholder:text-subtext-dark"
+                    placeholder="Enter phone number"
+                    type="tel"
+                  />
+                </label>
+                <div class="md:col-span-2">
+                  <label class="flex flex-col">
+                    <p
+                      class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2"
+                    >
+                      Company Name
+                    </p>
+                    <input
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-border-light bg-background-light px-4 py-3 text-base font-normal leading-normal text-text-light placeholder:text-subtext-light focus:border-primary focus:outline-0 focus:ring-0 dark:border-border-dark dark:bg-background-dark dark:text-text-dark dark:placeholder:text-subtext-dark"
+                      placeholder="Enter company name"
+                      type="text"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              class="rounded-xl border border-border-light bg-card-light p-6 shadow-sm dark:border-border-dark dark:bg-card-dark"
+            >
+              <h2
+                class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] pb-1"
+              >
+                Balance Information
+              </h2>
+              <p
+                class="text-subtext-light dark:text-subtext-dark text-base font-normal leading-normal pb-6"
+              >
+                This section is optional.
+              </p>
+              <div class="flex flex-col gap-4">
+                <p
+                  class="text-text-light dark:text-text-dark text-base font-medium leading-normal"
+                >
+                  Does he have money in the balance or not?
+                </p>
+                <div class="flex flex-wrap gap-x-8 gap-y-4">
+                  <label class="flex cursor-pointer items-center gap-2">
+                    <input
+                      class="form-radio h-4 w-4 border-border-light text-primary focus:ring-primary dark:border-border-dark dark:bg-background-dark"
+                      name="balance-status"
+                      type="radio"
+                      value="yes"
+                    />
+                    <span
+                      class="text-text-light dark:text-text-dark text-base font-normal leading-normal"
+                      >Yes, he has a balance</span
+                    >
+                  </label>
+                  <label class="flex cursor-pointer items-center gap-2">
+                    <input
+                      class="form-radio h-4 w-4 border-border-light text-primary focus:ring-primary dark:border-border-dark dark:bg-background-dark"
+                      name="balance-status"
+                      type="radio"
+                      value="no"
+                    />
+                    <span
+                      class="text-text-light dark:text-text-dark text-base font-normal leading-normal"
+                      >No, he does not have a balance</span
+                    >
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-end pt-2">
+              <button
+                class="flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-base font-medium text-white hover:bg-primary/90"
+              >
+                Add Agent
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

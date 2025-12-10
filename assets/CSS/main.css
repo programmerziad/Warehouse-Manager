@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+  --primary-color: #137fec;        /* أخضر أساسي */
+  --primary-dark: #137fec;         /* أخضر داكن */
+  --secondary-bg: #F7F9F9;         /* خلفية ناعمة */
+  --accent-color: #1e1e1e;         /* لون مميز - برتقالي */
+  --danger-color: #FFCDD2;         /* تنبيه انتهاء الصلاحية */
+  --text-color: #333;              /* لون الخط */
+  --border-color: #ddd;            /* لون الحدود */
+    --white: #fff;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--secondary-bg);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
+.user {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.Wellcome {
+    font-size: 16px;
+    ;
+}
