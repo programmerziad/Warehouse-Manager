@@ -165,7 +165,7 @@
     .activity-text .activity-meta,
     .activity-text .activity-time{
         font-size: 0.8rem;
-        white-space: normal;
+        /* white-space: normal; */
     }
     /* 6. إظهار زر القائمة */
     .screenWidth {
