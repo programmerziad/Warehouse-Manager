@@ -116,6 +116,7 @@ html.dark .avatar{
 .user-info .role{
     margin:0;
     font-size:0.85rem;
+    width: max-content;
     color:var(--muted);
 }
 .nameHold{
@@ -321,6 +322,9 @@ html.dark .popup-box p {
     color:var(--text-default); 
     text-shadow: 2px 2px 2px #0080ff;
 }
+html.dark .page-title{ 
+    color:#ffffff; 
+}
 .page-sub{ 
     margin:0; 
     margin-top:0.5rem; 
@@ -355,123 +359,22 @@ html.dark .icon-btn{
 /* Cards grid */
 .cards-grid{
     display:grid;
-    grid-template-columns:repeat(3, minmax(0,1fr));
-    gap:1.5rem;
+    grid-template-columns:repeat(4, minmax(0,1fr));
+    gap:1.3rem;
     margin-bottom:1.5rem;
 }
-@media(max-width:768px){
-    .cards-grid{ 
-        grid-template-columns:repeat(3, minmax(0,1fr));
-        gap: .5rem;
-    }
-    
-/* الوضع الأساسي — Sidebar ضيق */
-.sidebar {
-    width: 80px; /* العرض الابتدائي */
-    transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
-    overflow: hidden;
-    transform: translateX(-10px); /* تحريك بسيط للـ slide */
-}
 
-
-
-/* النصوص مخفية في الوضع العادي */
-.sidebar .nav-text,
-.sidebar .user-info {
-    opacity: 0;
-    white-space: nowrap;
-    transition: opacity 0.25s ease-in-out;
-    pointer-events: none; /* منع النقر على النصوص المخفية */
-}
-
-/* النصوص تظهر عند التوسيع */
-.sidebar:hover .nav-text,
-.sidebar:hover .user-info {
-    opacity: 1;
-    pointer-events: auto; /* السماح بالنقر بعد ظهور النصوص */
-}
-
-/* User Block */
-.sidebar .user-block {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Avatar */
-.sidebar .avatar {
-    min-width: 40px;
-    min-height: 40px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-}
-
-/* Nav Items */
-.nav-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 12px 15px;
-    transition: background 0.2s ease-in-out;
-}
-
-/* أيقونات ثابتة */
-.nav-item .icon {
-    font-size: 24px;
-    min-width: 24px;
-}
-
-/* Hover effect للـ nav-item */
-.nav-item:hover {
-    background: #00000014;
-}
-/* عند Hover — Sidebar يتوسع */
-.sidebar:hover {
-    width: 16rem; /* العرض بعد التوسيع */
-    transform: translateX(0); /* ينزلق على الوضع الطبيعي */
-}
-/* Responsive للهواتف */
-@media(max-width:639px){
-    .sidebar {
-        transform: translateX(-100%);
-        width: 16rem; /* العرض الكامل عند السحب */
-        position: fixed;
-        z-index: 100;
-    }
-
-    .sidebar:hover {
-        transform: translateX(0);
-    }
-}
-.main{
-    margin-left: 4rem;
-    flex:1;
-    padding: 1rem;
-    min-height:100vh;
-}
-.container{ 
-    max-width: 1350px; 
-    width: 100%;
-    margin: 0 auto; 
-}
-}
-@media(min-width:1024px){
-    .cards-grid{ 
-        grid-template-columns:repeat(3,1fr); 
-    }
-}
 
 .card{
     background:var(--card-light);
     border-radius:var(--radius-xl);
     padding:1.25rem;
-    border:1px solid rgba(226,228,232,0.6);
+    border:1px solid #e2e4e899;
     box-shadow:var(--shadow-sm);
 }
 html.dark .card{
-    background: rgba(17,24,39,0.5);
-    border:1px solid rgba(31,41,55,0.6);
+    background: #11182780;
+    border:1px solid #1f293799;
 }
 
 /* Stat card styles */
@@ -515,7 +418,6 @@ html.dark .stat-value{
 }
 .activities-title{
     margin:0;
-    padding:1.25rem 1.5rem 0.5rem 1.5rem;
     font-size:1.375rem;
     font-weight:700;
 }
@@ -628,10 +530,31 @@ html.dark
     margin: 0;
 }
 
+.activities-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem 0.5rem 1.5rem;
+}
+
+.view-all-btn {
+    background: none;
+    border: none;
+    color: #137fec;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.view-all-btn:hover {
+    text-decoration: underline;
+}
+
 
 
   /* Media Query تظهر الرسالة على الشاشات الصغيرة */
-@media (max-width: 650px) {
+/* @media (max-width: 650px) {
     .app-root,.popup-overlay{
         display: none;
     }
@@ -674,7 +597,7 @@ html.dark
     font-size: 0.8rem;
     max-width: 300px;
 }
-}
+} */
 
 
 

@@ -1,0 +1,190 @@
+/* @media(max-width:776px){
+    .cards-grid{ 
+        grid-template-columns:repeat(2,1fr); 
+    }
+}
+
+@media(max-width:768px){
+    .cards-grid{ 
+        grid-template-columns:repeat(2, minmax(0,1fr));
+        gap: .5rem;
+    }
+    
+
+.sidebar {
+    width: 80px;
+    transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+    overflow: hidden;
+    transform: translateX(-10px);
+}
+
+
+.sidebar .nav-text,
+.sidebar .user-info {
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.25s ease-in-out;
+    pointer-events: none;
+}
+
+.sidebar:hover .nav-text,
+.sidebar:hover .user-info {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar .user-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar .avatar {
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    transition: background 0.2s ease-in-out;
+}
+
+.nav-item .icon {
+    font-size: 24px;
+    min-width: 24px;
+}
+
+.nav-item:hover {
+    background: #00000014;
+}
+
+.sidebar:hover {
+    width: 16rem;
+    transform: translateX(0);
+}
+@media(max-width:639px){
+    .sidebar {
+        transform: translateX(-100%);
+        width: 16rem;
+        position: fixed;
+        z-index: 100;
+    }
+
+    .sidebar:hover {
+        transform: translateX(0);
+    }
+}
+.main{
+    margin-left: 4rem;
+    flex:1;
+    padding: 1rem;
+    min-height:100vh;
+}
+.container{ 
+    max-width: 1350px; 
+    width: 100%;
+    margin: 0 auto; 
+}
+} 
+
+@media(max-width:480px){
+    .cards-grid{ 
+        grid-template-columns:1fr; 
+    }
+} */
+
+
+@media (max-width: 1024px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.7rem;
+    }
+    
+    .main {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 450px) {
+    /* 1. السايد بار */
+    .sidebar {
+        transform: translateX(-100%); /* إخفاء السايد بار */
+        width: 15rem;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    }
+    .header-actions{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    /* كلاس لفتحه بالجافاسكريبت */
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    /* 2. المحتوى الرئيسي */
+    .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* 3. الهيدر */
+    .page-header {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .page-title {
+        font-size: 1.2rem;
+        width: max-content;
+    }
+    .page-sub {
+        font-size: 0.8rem;
+    }
+
+    /* 4. الكروت */
+    .cards-grid {
+        /* grid-template-columns: 1fr; كارت واحد في الصف */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.3rem;
+    }
+
+    /* 5. الأنشطة Recent Activities */
+    .activity {
+        padding: 0.75rem;
+    }
+
+    .activity-text .activity-title,
+    .activity-text .activity-meta,
+    .activity-text .activity-time{
+        font-size: 0.8rem;
+        white-space: normal;
+    }
+    /* 6. إظهار زر القائمة */
+    .screenWidth {
+        display: none !important;
+    }
+    .app-root {
+        display: flex !important;
+    }
+}
+
+
+@media (max-width: 450px) {
+    #menuOpenBtn {
+        display: inline-flex !important;
+    }
+}
+
+@media (max-width: 320px) {
+    .cards-grid {
+        grid-template-columns: 1fr; /* كارت واحد في الصف */
+    }
+}

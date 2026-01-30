@@ -1,0 +1,209 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+.activities-page {
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+}
+.header-activites{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 20px; */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #59595927;
+}
+.activities-page-title {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.activities-page-filters {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: #f3f4f6;
+    font-size: 14px;
+    border: 2px solid #bebebe;
+    cursor: pointer;
+}
+.filter-btn:hover {
+    background: #e2e8f0;
+    border: 2px solid #0b7feb;
+}
+
+.filter-btn.active {
+    background: #0b7feb;
+    border: 2px solid transparent;
+    color: #fff;
+    font-weight: 600;
+}
+
+.activities-page-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    border-bottom: 1px solid #acacac31;
+}
+html.dark .activities-page {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+}
+html.dark .filter-btn{
+    background: #1e293b;
+    color: #fff;
+}
+html.dark .filter-btn.active{
+    background: #0b7feb;
+}
+
+
+.clearLogsBtncontainer{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+#clearLogsBtn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #f87171;
+    padding: 8px 16px;
+    border: none;
+    font-weight: 700;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+}
+#clearLogsBtn:hover {
+    background: #ef4444;
+}
+#clearLogsBtn .material-symbols-outlined {
+    font-size: 20px;
+    vertical-align: middle;
+}
+html.dark #clearLogsBtn {
+    background: #ef4444;
+}
+html.dark #clearLogsBtn:hover {
+    background: #f87171;
+}
+
+
+#clearLogsModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000099; 
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+}
+
+/* الصندوق الأبيض الصغير */
+#clearLogsModal > div {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px #00000033;
+}
+
+
+#clearLogsModal .material-symbols-outlined {
+    font-size: 60px;
+    color: #ef4444;
+    margin-bottom: 15px;
+}
+
+
+#clearLogsModal h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+#clearLogsModal p {
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+#clearLogsModal div:last-child {
+    display: flex;
+    gap: 12px;
+}
+
+#clearLogsModal button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+
+#confirmClearBtn {
+    background-color: #ef4444;
+    color: white;
+}
+
+#confirmClearBtn:hover {
+    background-color: #dc2626;
+}
+
+#cancelClearBtn {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+#cancelClearBtn:hover {
+    background-color: #e5e7eb;
+}
+
+/* dark mode */
+html.dark #clearLogsModal > div {
+    background-color: #1e293b;
+}
+html.dark #clearLogsModal h3 {
+    color: #f3f4f6;
+}
+html.dark #clearLogsModal p {
+    color: #9ca3af;
+}
+html.dark #cancelClearBtn {
+    background-color: #374151;
+    color: #f3f4f6;
+}
+html.dark #cancelClearBtn:hover {
+    background-color: #4b5563;
+}
+html.dark #confirmClearBtn {
+    background-color: #dc2626;
+    color: #f3f4f6;
+}
+html.dark #confirmClearBtn:hover {
+    background-color: #ef4444;
+}

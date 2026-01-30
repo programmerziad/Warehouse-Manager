@@ -1,0 +1,227 @@
+/* Main Content */
+.card {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Title */
+.card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111418;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.form-grid {
+    display: grid;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.two-cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.three-cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Form group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111418;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+    height: 48px;
+    padding: 0 14px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    color: #111418;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #617589;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2563eb;
+    transform: scale(1.01);
+    box-shadow: 0 2px 6px #0c3fada1;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .two-cols,
+    .three-cols {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Added Product Popup */
+.AddedPoup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+.AddedPoup.active {
+    visibility: visible;
+    opacity: 1;
+}
+.addedBox {
+    background-color: #ffffff;
+    padding: 24px 32px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px #0000001a;
+}
+.addedBox h2 {
+    font-size: 22px;
+    color: #6ac700;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+.closeBtn {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.closeBtn:hover {
+    background-color: #1e40af;
+}
+
+.massagePopup {
+    position: fixed;
+    top: 0;
+    left: 16rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2rem;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-150px); /* يبدأ بعيد فوق */
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.massagePopup.active {
+    visibility: visible;
+    opacity: 1;
+    animation: dropDown 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+
+@keyframes dropDown {
+    0% {
+        transform: translateY(-150px);
+    }
+    60% {
+        transform: translateY(20px); 
+    }
+    80% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.messageBox {
+    background-color: #ffffff2a;
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px #0000001a;
+}
+
+.messageBox h2 {
+    font-size: 22px;
+    color: #ff0000;
+    font-weight: 500;
+}
+
+.input-error {
+    border: 2px solid red;
+}
+
+.input-success {
+    border: 2px solid #4CAF50;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+html.dark .card-title {
+    color: #ffffff;
+    border-bottom: 1px solid #374151;
+}
+html.dark .form-group label {
+    color: #ffffff;
+}
+html.dark .form-group input,
+html.dark .form-group select {
+    background-color: #1f2937;
+    color: #ffffff;
+    border: 1px solid #374151;
+}
+html.dark .form-group input::placeholder {
+    color: #9ca3af;
+}
+html.dark .form-group input:focus,
+html.dark .form-group select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 2px 6px #3b82f6a1;
+}
+html.dark .addedBox {
+    background-color: #1d2836;
+    box-shadow: 0 4px 12px #6ac70057;
+}
+html.dark .addedBox h2 {
+    color: #6ac700;
+}
+html.dark .closeBtn {
+    background-color: #3b82f6;
+}
+html.dark .closeBtn:hover {
+    background-color: #1e40af;
+}

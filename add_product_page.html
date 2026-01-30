@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Add Product Page</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/CSS/products.css" />
+    <link rel="stylesheet" href="assets/CSS/dashboard.css" />
+    <link rel="stylesheet" href="assets/CSS/add-product.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-top">
+          <div class="user-block">
+            <div
+              class="avatar"
+              aria-hidden="true"
+              style="background-image: url('assets/images/user.png')"
+            ></div>
+            <div class="user-info">
+              <h1 class="greeting" id="time-Edite"></h1>
+              <p class="role" id="info-Name"></p>
+            </div>
+          </div>
+
+          <nav class="nav">
+            <a class="nav-item" href="Dashboard.html">
+              <span class="material-symbols-outlined icon">dashboard</span>
+              <span class="nav-text">Dashboard</span>
+            </a>
+
+            <a class="nav-item active" href="products_page.html">
+              <span class="material-symbols-outlined icon">inventory_2</span>
+              <span class="nav-text">Products</span>
+            </a>
+
+            <a class="nav-item" href="Stock_Out.html">
+              <span class="material-symbols-outlined icon">move_up</span>
+              <span class="nav-text">Stock Out</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="material-symbols-outlined icon">group</span>
+              <span class="nav-text">Agents</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="material-symbols-outlined icon">credit_card</span>
+              <span class="nav-text">Debts</span>
+            </a>
+
+            <a class="nav-item" href="#">
+              <span class="material-symbols-outlined icon">request_quote</span>
+              <span class="nav-text">Invoices</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+          <a class="nav-item" href="#">
+            <span class="material-symbols-outlined icon">account_circle</span>
+            <!-- <img src="assets/images/user.png" alt="img-Profile-user"> -->
+            <span class="nav-text">Profile</span>
+          </a>
+          <a class="nav-item" href="index.html" id="logoutBtn">
+            <span class="material-symbols-outlined icon">logout</span>
+            <span class="nav-text">Logout</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+    <!-- End Sidebar -->
+    <!-- main content -->
+    <main class="main-content">
+      <div class="container">
+        <header class="mb-2">
+          <div class="flex justify-between items-start mb-2">
+            <div class="flex flex-wrap gap-2">
+              <a
+                class="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal"
+                href="products_page.html"
+                >Products</a
+              >
+              <span
+                class="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal"
+                >/</span
+              >
+              <span
+                class="text-[#111418] dark:text-white text-sm font-medium leading-normal"
+                >Add New Product</span
+              >
+            </div>
+          </div>
+          <div class="flex flex-wrap justify-between gap-3 items-center">
+            <h2 class="page-title text-3xl">Add New Product</h2>
+          </div>
+        </header>
+        <div class="space-y-8">
+          <!-- Product Details -->
+          <div class="card">
+            <h3 class="card-title">Product Details</h3>
+
+            <div class="form-grid two-cols">
+              <div class="form-group">
+                <label for="product-name">Product Name</label>
+                <input
+                  type="text"
+                  id="product-name"
+                  placeholder="Enter product name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category">
+                  <option value="">Select a category</option>
+                  <option value="Chips">Chips</option>
+                  <option value="Juices">Juices</option>
+                  <option value="Dairy">Dairy</option>
+                  <option value="Legumes">Legumes</option>
+                  <option value="Biscuits & Candy">Biscuits & Candy</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- Stock & Price -->
+          <div class="card">
+            <h3 class="card-title">Stock & Price</h3>
+
+            <div class="form-grid three-cols">
+              <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" placeholder="0" />
+              </div>
+
+              <div class="form-group">
+                <label for="price">Price</label>
+                <input
+                  type="number"
+                  id="price"
+                  placeholder="0.00"
+                  step="0.01"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="expiry-date">Expiry Date</label>
+                <input type="date" id="expiry-date" />
+              </div>
+            </div>
+          </div>
+          <!-- Action Buttons -->
+          <div class="flex justify-end items-center gap-4 pt-4">
+            <a
+              href="/products_page.html"
+              class="px-6 py-3 rounded-lg text-sm font-semibold text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+            >
+              Cancel
+            </a>
+            <button
+              id="addProductBtn"
+              class="px-8 py-3 rounded-lg text-sm font-semibold text-white bg-primary hover:bg-primary/90 transition-colors"
+            >
+              Add Product
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- end main content -->
+    <!-- Product Added Popup -->
+    <div class="AddedPoup" id="addedPopup">
+      <div class="addedBox">
+        <h2>Product Added Successfully!</h2>
+        <button id="closeAddedPopup" class="closeBtn">Close</button>
+      </div>
+    </div>
+    <div class="massagePopup" id="messagePopup">
+      <div class="messageBox">
+        <h2 id="messageContent">Please fill all required fields correctly.</h2>
+      </div>
+    </div>
+    <!-- Confirmation Popup -->
+    <div id="logoutPopup" class="popup-overlay">
+      <div class="popup-box">
+        <p>Are you sure you want to log out?</p>
+        <div class="popup-actions">
+          <button id="confirmYes" class="btn-yes">Yes</button>
+          <button id="confirmNo" class="btn-no">No</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/JS/dashboard.js"></script>
+    <script src="assets/JS/addProduct.js"></script>
+  </body>
+</html>

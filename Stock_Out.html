@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Stock Out Page</title>
+    <link rel="stylesheet" href="assets/CSS/dashboard.css" />
+    <link rel="stylesheet" href="assets/CSS/stock-out.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="app-root">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-top">
+                    <div class="user-block">
+                        <div class="avatar" aria-hidden="true" style="background-image: url('assets/images/user.png')">
+                        </div>
+                        <div class="user-info">
+                            <h1 class="greeting" id="time-Edite"></h1>
+                            <p class="role" id="info-Name"></p>
+                        </div>
+                    </div>
+
+                    <nav class="nav">
+                        <a class="nav-item" href="Dashboard.html">
+                            <span class="material-symbols-outlined icon">dashboard</span>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+
+                        <a class="nav-item" href="products_page.html">
+                            <span class="material-symbols-outlined icon">inventory_2</span>
+                            <span class="nav-text">Products</span>
+                        </a>
+
+                        <a class="nav-item active" href="Stock_Out.html">
+                            <span class="material-symbols-outlined icon">move_up</span>
+                            <span class="nav-text">Stock Out</span>
+                        </a>
+
+                        <a class="nav-item" href="#">
+                            <span class="material-symbols-outlined icon">group</span>
+                            <span class="nav-text">Agents</span>
+                        </a>
+
+                        <a class="nav-item" href="#">
+                            <span class="material-symbols-outlined icon">credit_card</span>
+                            <span class="nav-text">Debts</span>
+                        </a>
+
+                        <a class="nav-item" href="#">
+                            <span class="material-symbols-outlined icon">request_quote</span>
+                            <span class="nav-text">Invoices</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="sidebar-bottom">
+                    <a class="nav-item" href="#">
+                        <span class="material-symbols-outlined icon">account_circle</span>
+                        <!-- <img src="assets/images/user.png" alt="img-Profile-user"> -->
+                        <span class="nav-text">Profile</span>
+                    </a>
+                    <a class="nav-item" href="index.html" id="logoutBtn">
+                        <span class="material-symbols-outlined icon">logout</span>
+                        <span class="nav-text">Logout</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main">
+            <div class="container">
+                <header class="page-header">
+                    <div class="title-block">
+                        <h1 class="page-title">Stock Out</h1>
+                    </div>
+                    <div class="search-filter-wrapper">
+                        <div class="custom-search-wrapper">
+                            <div class="custom-search">
+                                <input type="text" id="searchInput" placeholder="Search by product name..." />
+                                <button class="search-btn">
+                                    <span class="material-symbols-outlined">search</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="select-wrapper">
+                            <select class="category-select">
+                                <option selected="">All Categories</option>
+                                <option>Chips</option>
+                                <option>Dairy</option>
+                                <option>Juices</option>
+                                <option>Legumes</option>
+                                <option>Biscuits & Candy</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- <div class="header-actions">
+                        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                            <span class="material-symbols-outlined icon dark-mode-icon">dark_mode</span>
+                            <span class="material-symbols-outlined icon light-mode-icon">light_mode</span>
+                        </button>
+
+                        <button class="icon-btn" aria-label="Language">
+                            <span class="material-symbols-outlined icon">language</span>
+                        </button>
+                    </div> -->
+                </header>
+                <div class="product-management-container">
+                    <div class="table-container">
+                        <div class="table-card">
+                            <div class="table-responsive">
+                                <table class="products-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Product Name</th>
+                                            <th>Category</th>
+                                            <th>Current Quantity</th>
+                                            <th>Quantity to Remove</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Product rows will be dynamically inserted here -->
+                                        
+                                        <!-- <tr>
+                                            <td class="product-name">Industrial Widget</td>
+                                            <td class="text-muted">Chips</td>
+                                            <td class="text-muted">500</td>
+                                            <td>
+                                                <input class="qty-input" placeholder="Enter quantity" type="number"
+                                                    min="1" />
+                                            </td>
+                                            <td>
+                                                <button class="btn-confirm">Confirm</button>
+                                            </td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Confirmation Popup -->
+    <div id="logoutPopup" class="popup-overlay">
+        <div class="popup-box">
+            <p>Are you sure you want to log out?</p>
+            <div class="popup-actions">
+                <button id="confirmYes" class="btn-yes">Yes</button>
+                <button id="confirmNo" class="btn-no">No</button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/JS/dashboard.js"></script>
+    <script src="assets/JS/Stock_out.js"></script>
+</body>
+
+</html>
