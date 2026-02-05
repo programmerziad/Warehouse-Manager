@@ -1,5 +1,5 @@
 // ================== DOM Elements ==================
-// تعريف العناصر الأساسية مرة واحدة في البداية
+
 const logoutBtn = document.getElementById("logoutBtn");
 const popup = document.getElementById("logoutPopup");
 const btnYes = document.getElementById("confirmYes");
@@ -10,14 +10,14 @@ const tableBody = document.getElementById("productsTableBody");
 const filterRadios = document.querySelectorAll('input[name="filters"]');
 const searchInput = document.getElementById("searchInput");
 
-// تعريف عناصر الإضافة (كانت ناقصة في الكود الأصلي)
+
 const addProductBtn = document.getElementById("addProductBtn");
 const productNameInput = document.getElementById("productName");
 const productCategoryInput = document.getElementById("productCategory");
 const productQuantityInput = document.getElementById("productQuantity");
 const productPriceInput = document.getElementById("productPrice");
 const productExpiryInput = document.getElementById("productExpiry");
-const messagePopup = document.getElementById("messagePopup"); // افترضت وجوده
+const messagePopup = document.getElementById("messagePopup"); 
 
 // ================== Data Management ==================
 function getProducts() {
@@ -29,7 +29,7 @@ function saveProducts(products) {
 }
 
 // ================== Greeting & User Info ==================
-// تحسين: تشغيل الكود فوراً بدون الانتظار
+
 (function initDashboard() {
     const hour = new Date().getHours();
     let message = hour < 12 ? "GOOD MORNING" : hour < 18 ? "GOOD AFTERNOON" : "GOOD NIGHT";
@@ -136,24 +136,26 @@ function renderProducts() {
         // استخدام highlightText فقط عند العرض
         const displayName = highlightText(product.name, searchTerm);
 
+        // <td class="px-6 py-4">${product.expiryDate || "-"}</td>
         row.innerHTML = `
-          <td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">${displayName}</td>
-          <td class="px-6 py-4 text-center">${product.quantity}</td>
-          <td class="px-6 py-4 text-center">${product.price.toFixed(2)} EGP</td>
-          <td class="px-6 py-4">${product.expiryDate || "-"}</td>
-          <td class="px-6 py-4">
-            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${status.class}">
-              ${status.text}
-            </span>
-          </td>
-          <td class="px-6 py-4 text-right space-x-2">
-            <button class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500" onclick="editProduct(${product.id})">
-              <span class="material-symbols-outlined text-base">edit</span>
-            </button>
-            <button class="delet-product p-2 rounded-md text-red-500" onclick="deleteProduct(${product.id})">
-              <span class="material-symbols-outlined text-base">delete</span>
-            </button>
-          </td>
+            <td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">${displayName}</td>
+            <td class="px-6 py-4 text-center">${product.quantity}</td>
+            <td class="px-6 py-4 text-center">${product.price.toFixed(2)} EGP</td>
+            <td class="px-6 py-4">${product.expiryDate ? product.expiryDate.split("-").reverse().join("-"): "-"}</td>
+
+            <td class="px-6 py-4">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${status.class}">
+                ${status.text}
+                </span>
+            </td>
+            <td class="px-6 py-4 text-right space-x-2">
+                <button class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500" onclick="editProduct(${product.id})">
+                <span class="material-symbols-outlined text-base">edit</span>
+                </button>
+                <button class="delet-product p-2 rounded-md text-red-500" onclick="deleteProduct(${product.id})">
+                <span class="material-symbols-outlined text-base">delete</span>
+                </button>
+            </td>
         `;
         tableBody.appendChild(row);
     });

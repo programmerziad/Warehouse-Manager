@@ -144,7 +144,7 @@ if (addProductBtn) {
       // سجل النشاط عند الإضافة مع التاريخ والوقت
       addActivity(
         `New product added: <span style="color: #137fec;">${name}</span>`,
-        `Created ${dateTimeFormatted}`,
+        `Added ${dateTimeFormatted}`,
         "add"
       );
     }

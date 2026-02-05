@@ -67,12 +67,12 @@ function loadStats() {
 
     const stats = {
         total: products.length,
-        lowStock: products.filter(p => p.quantity <= Low_stock_Limit).length,
+        lowStock: products.filter(p => p.quantity <= 20).length,
         expired: products.filter(p => p.expiryDate && new Date(p.expiryDate) < today).length,
         expiring: products.filter(p => {
             if (!p.expiryDate) return false;
-            const diff = (new Date(p.expiryDate) - today) / Day;
-            return diff >= 0 && diff <= EXPIRY_DAYS;
+            const diff = (new Date(p.expiryDate) - today) / 1000 * 60 * 60 * 24;
+            return diff >= 0 && diff <= 30;
         }).length
     };
 
@@ -89,11 +89,11 @@ function autoWarnings() {
     today.setHours(0, 0, 0, 0);
 
     products.forEach(p => {
-        if (p.quantity <= Low_stock_Limit) saveAuto(`Stock low: ${p.name}`, `Only ${p.quantity} left`, "warning");
+        if (p.quantity <= 20) saveAuto(`Stock low: ${p.name}`, `Only ${p.quantity} left`, "warning");
         
         if (p.expiryDate) {
-            const diff = (new Date(p.expiryDate) - today) / Day;
-            if (diff <= EXPIRY_DAYS && diff >= 0) saveAuto(`Expiring soon: ${p.name}`, `Expires in ${Math.ceil(diff)} days`, "calendar_today");
+            const diff = (new Date(p.expiryDate) - today) / 1000 * 60 * 60 * 24;
+            if (diff <= 30 && diff >= 0) saveAuto(`Expiring soon: ${p.name}`, `Expires in ${Math.ceil(diff)} days`, "calendar_today");
             else if (diff < 0) saveAuto(`Expired product: ${p.name}`, "Remove from stock", "error");
         }
     });
