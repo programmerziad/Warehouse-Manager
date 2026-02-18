@@ -181,10 +181,38 @@
     #menuOpenBtn {
         display: inline-flex !important;
     }
+    .activity-left{
+        gap: 0.35rem;
+        align-items: center;
+    }
+    .activity-title {
+        font-size: 0.90rem;
+        word-break: break-word;
+    }
+    .activity-meta,
+    .activity-time {
+        font-size: 0.70rem;
+        word-break: break-word;
+    }
+    .activity-icon {
+        font-size: 1.1rem;
+        min-width: 27px;
+        min-height: 27px;
+        /* margin-right: 0.35rem; */
+    }
+    .activity-text {
+        flex: 1 1 0%;
+        min-width: 0;
+    }
+    .activity {
+        padding: 0.5rem 0.35rem;
+    }
 }
 
 @media (max-width: 320px) {
     .cards-grid {
         grid-template-columns: 1fr; /* كارت واحد في الصف */
     }
+    
 }
+

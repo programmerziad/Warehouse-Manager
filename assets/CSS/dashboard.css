@@ -1,11 +1,9 @@
-/* style.css — converted from Tailwind-based page */
-/* Font and base */
 :root{
     --primary: #137fec;
     --bg-light: #f6f7f8;
     --bg-dark: #101922;
     --card-light: #ffffff;
-    --card-dark: rgba(17, 24, 39, 0.6); /* approximates gray-900/50 */  
+    --card-dark: #11182799; /* approximates gray-900/50 */  
     --text-default: #111418;
     --muted: #617589;
     --border-light: #e6e8ea; /* approx */
@@ -305,6 +303,40 @@ html.dark .popup-box p {
     max-width: 1350px; 
     width: 100%;
     margin: 0 auto; 
+}
+
+.breadcrumbs a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0080ff;
+    letter-spacing: 0.03em;
+}
+
+.breadcrumbs a:hover {
+    color: #0061c2;
+    transition: all 0.18s;
+    outline: none;
+    font-weight: lighter;
+}
+
+html.dark .breadcrumbs a:hover {
+    color: #0061c2;
+}
+
+.breadcrumbs span {
+    font-size: 20px;
+    color: #0b0c0e;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    user-select: none;
+}
+html.dark .breadcrumbs span {
+    color: #cbd5e1;
+}
+
+html.dark .breadcrumbs a{
+    color: #e0e0e0;
 }
 
 /* Page header */
