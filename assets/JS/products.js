@@ -78,12 +78,12 @@ function getStatus(product) {
     }
 
     // 3. اقتراب انتهاء الصلاحية
-    if (expiry && (expiry - today) <= EXPIRY_DAYS * Day) {
+    if (expiry && (expiry - today) <= 1000 * 60 * 60 * 24) {
         return { text: "Expiring Soon", class: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300" };
     }
 
     // 4. كمية قليلة
-    if (product.quantity <= Low_stock_Limit) {
+    if (product.quantity <= 20) {
         return { text: "Low Stock", class: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300" };
     }
 
