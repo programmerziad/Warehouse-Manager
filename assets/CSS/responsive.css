@@ -136,9 +136,73 @@
     }
 
     /* 3. الهيدر */
-    .page-header {
-        flex-direction: row;
-        align-items: flex-start;
+    #clearLogsBtn {
+        font-size: 0;
+    }
+    #clearLogsBtn .material-symbols-outlined {
+        font-size: 20px;
+        vertical-align: middle;
+        margin-right: 0;
+    }
+    #clearLogsBtn span,
+    #clearLogsBtn::after,
+    #clearLogsBtn::before {
+        font-size: 20px !important;
+    }
+    #clearLogsBtn .material-symbols-outlined {
+        font-size: 20px !important;
+    }
+    /* لإخفاء نص Clear All Logs */
+    #clearLogsBtn {
+        font-size: 0 !important;
+    }
+    #clearLogsBtn .material-symbols-outlined {
+        font-size: 20px !important;
+    }
+    
+    #clearLogsModal > div {
+        width: 92vw !important;
+        max-width: 97vw !important;
+        min-width: 0 !important;
+        padding: 1.2rem 1rem !important;
+        border-radius: 12px !important;
+        box-sizing: border-box;
+        font-size: 1rem;
+    }
+    #clearLogsModal h3 {
+        font-size: 1.1rem !important;
+        text-align: center;
+        margin-bottom: 0.6em;
+        margin-top: 0.4em;
+        word-break: break-word;
+    }
+    #clearLogsModal p {
+        font-size: 0.97rem !important;
+        text-align: center;
+        margin-bottom: 1em;
+        line-height: 1.4;
+        word-break: break-word;
+    }
+    #clearLogsModal .material-symbols-outlined {
+        font-size: 2.1rem !important;
+        display: block;
+        margin: 0 auto 0.1em auto;
+    }
+    #clearLogsModal button {
+        font-size: 1rem !important;
+        padding: 0.56em 1.1em !important;
+        border-radius: 8px;
+        margin: 0 0.4em;
+        margin-bottom: 0.3em;
+        width: 100%;
+        max-width: 100%;
+    }
+    #clearLogsModal > div > div:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        align-items: stretch;
+        width: 100%;
     }
 
     .page-title {
@@ -174,6 +238,8 @@
     .app-root {
         display: flex !important;
     }
+
+    
 }
 
 
@@ -207,6 +273,37 @@
     .activity {
         padding: 0.5rem 0.35rem;
     }
+.header-activites {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+}
+.activities-page-title {
+    text-align: left;
+}
+.activities-page-filters {
+    justify-content: center;
+}
+@media (max-width: 450px) {
+    .header-activites {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px;
+    }
+    .activities-page-title {
+        text-align: left !important;
+    }
+    .activities-page-filters {
+        justify-content: center !important;
+    }
+}
+
+.activities-page-item{
+    display: block;
+}
+.activity-time{
+    text-align: end;
+}
 }
 
 @media (max-width: 320px) {

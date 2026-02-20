@@ -67,11 +67,13 @@ html.dark .filter-btn.active{
     background: #0b7feb;
 }
 
-
+.page-header{
+    margin-top: 1.5rem;
+}
 .clearLogsBtncontainer{
     display: flex;
     justify-content: flex-end;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 #clearLogsBtn {
     display: flex;
@@ -206,4 +208,11 @@ html.dark #confirmClearBtn {
 }
 html.dark #confirmClearBtn:hover {
     background-color: #ef4444;
+}
+
+
+.breadcrumbs-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
